@@ -2,4 +2,4 @@
 
 ## Work In Progress
 
-This app will be a portfolio/resume of myself as an iOS application itself.
+This will be an iOS application that can be used as a portfolio/resume of myself. Mainly created this app to try out the newest framework SwiftUI.
