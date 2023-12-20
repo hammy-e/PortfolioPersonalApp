@@ -9,20 +9,23 @@ import SwiftUI
 
 struct SkillsView: View {
     var body: some View {
-        Text("  Skills")
-            .padding(8)
-            .font(.largeTitle)
-            .foregroundColor(.black)
-            .frame(maxWidth: .infinity, alignment: .leading)
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack {
-                SingleSkillView(name: "Swift", imageName: "swift")
-                SingleSkillView(name: "Xcode", imageName: "xcode")
-                SingleSkillView(name: "UIKit", imageName: "apple")
-                SingleSkillView(name: "GitHub", imageName: "github")
+        VStack {
+            Text("Skills")
+                .padding(8)
+                .font(.largeTitle)
+                .foregroundColor(.black)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    SingleSkillView(name: "Swift", imageName: "swift")
+                    SingleSkillView(name: "Xcode", imageName: "xcode")
+                    SingleSkillView(name: "UIKit", imageName: "apple")
+                    SingleSkillView(name: "GitHub", imageName: "github")
+                }
+                .padding(12)
             }
-            .padding(14)
         }
+        .padding(.horizontal)
     }
     
     struct SingleSkillView: View {

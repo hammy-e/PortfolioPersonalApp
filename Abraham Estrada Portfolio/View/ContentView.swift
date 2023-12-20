@@ -16,6 +16,8 @@ struct ContentView: View {
                 Divider()
                 SkillsView()
                 Divider()
+                EducationView()
+                Divider()
             }
         }
     }
