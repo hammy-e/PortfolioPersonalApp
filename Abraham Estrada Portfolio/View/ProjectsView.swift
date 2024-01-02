@@ -1,27 +1,28 @@
 //
-//  EducationView.swift
+//  ProjectsView.swift
 //  Abraham Estrada Portfolio
 //
-//  Created by Abraham Estrada on 12/19/23.
+//  Created by Abraham Estrada on 1/1/24.
 //
 
 import SwiftUI
 
-struct EducationView: View {
+struct ProjectsView: View {
     var body: some View {
         VStack {
-            Text("Education")
+            Text("Projects")
                 .padding(8)
                 .font(.largeTitle)
                 .foregroundColor(.black)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            UniversityView(name: "San Diego State University", desc: "BS in Computer Science \nAug 2022-May 2024 · GPA: 3.74", imageName: "sdsu")
-            UniversityView(name: "Southwestern College", desc: "AST in Computer Science \nAug 2019-Dec 2021 · GPA: 3.67", imageName: "swc")
+            SingleProjectView(name: "Bee", desc: "iOS Social Media Application", imageName: "bee")
+            SingleProjectView(name: "Listcheck", desc: "iOS Task Reminder Application", imageName: "listcheck")
+            SingleProjectView(name: "COVIDWATCH", desc: "iOS Covid-19 Tracker Application", imageName: "covidwatch")
         }
         .padding(.horizontal)
     }
     
-    struct UniversityView: View {
+    struct SingleProjectView: View {
         
         var name: String
         var desc: String
@@ -31,33 +32,34 @@ struct EducationView: View {
             GeometryReader { geo in
                 ZStack {
                     Color.white
-                    HStack {
+                    VStack {
                         Image(imageName)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                        VStack(alignment: .leading) {
+                            .cornerRadius(12)
+                        VStack(alignment: .center) {
                             Text(name)
                                 .font(Font.system(size: 16, weight: .bold, design: .default))
                                 .foregroundColor(.black)
                             Text(desc)
                                 .font(Font.system(size: 14, weight: .regular, design: .default))
                                 .foregroundColor(.black)
+                                .multilineTextAlignment(.center)
                         }
                     }
                     .padding()
                 }
-                .frame(width: geo.size.width, height: 100, alignment: .center)
+                .frame(width: geo.size.width, height: 175, alignment: .center)
                 .cornerRadius(12)
                 .shadow(radius: 8)
             }
-            .frame(width: .infinity, height: 100, alignment: .center)
+            .frame(width: .infinity, height: 175, alignment: .center)
         }
     }
 }
 
-
-struct EducationView_Previews: PreviewProvider {
+struct ProjectsView_Previews: PreviewProvider {
     static var previews: some View {
-        EducationView()
+        ProjectsView()
     }
 }

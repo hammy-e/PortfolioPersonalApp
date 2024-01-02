@@ -11,13 +11,17 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Color(.white).edgesIgnoringSafeArea(.all)
-            VStack {
-                IntroductionView()
-                Divider()
-                SkillsView()
-                Divider()
-                EducationView()
-                Divider()
+            ScrollView {
+                VStack {
+                    IntroductionView()
+                    Divider()
+                    SkillsView()
+                    Divider()
+                    EducationView()
+                    Divider()
+                    ProjectsView()
+                    Divider()
+                }
             }
         }
     }
